@@ -10,13 +10,6 @@ namespace Demo.ServiceHost.Console
     {
         static void Main(string[] args)
         {
-            // the user must be in admin role to
-            // approve orders (unattended process) 
-            var principal = new GenericPrincipal(
-                new GenericIdentity("Pingo"), 
-                new[] { "DemoAdmin" });
-            Thread.CurrentPrincipal = principal;
-
             // set up the dependency container because instantiating
             // shopping manager and dependencies of it (ShoppingManager)
             ObjectBase.Container = MefLoader.Init();

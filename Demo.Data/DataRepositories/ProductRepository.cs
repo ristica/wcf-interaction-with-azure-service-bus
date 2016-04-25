@@ -77,12 +77,16 @@ namespace Demo.Data.DataRepositories
 
         public void ActivateProduct(int productId)
         {
-            Products.FirstOrDefault(p => p.IsActive).IsActive = true;
+            var firstOrDefault = Products.FirstOrDefault(p => p.ProductId == productId);
+            if (firstOrDefault != null)
+                firstOrDefault.IsActive = true;
         }
 
         public void DeactivateProduct(int productId)
         {
-            Products.FirstOrDefault(p => p.IsActive).IsActive = false;
+            var firstOrDefault = Products.FirstOrDefault(p => p.ProductId == productId);
+            if (firstOrDefault != null)
+                firstOrDefault.IsActive = false;
         }
 
         public Product UpdateProduct(Product product)
@@ -99,6 +103,8 @@ namespace Demo.Data.DataRepositories
                     Name = product.Name,
                     Price = product.Price
                 };
+
+                Products.Add(p);
             }
             else
             {

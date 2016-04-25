@@ -10,18 +10,10 @@ using Demo.Data.Contracts;
 
 namespace Demo.Business.Managers
 {
-    /// <summary>
-    /// do set initialization per call and not per session (default)
-    /// because it is not scalable
-    /// set concurency mode to multiple (default = single) because we have per call situation
-    /// set ReleaseServiceInstanceOnTransactionComplete to true if there will be at least 
-    /// one operation with attribute TransactionScopeRequired = true
-    /// </summary>
     [ServiceBehavior(
         InstanceContextMode = InstanceContextMode.PerCall, 
         ConcurrencyMode = ConcurrencyMode.Multiple, 
         ReleaseServiceInstanceOnTransactionComplete = false)]
-    //[OperationReportServiceBehavior(true)]
     public class InventoryManager : ManagerBase, IInventoryService
     {
         #region Fields
@@ -88,7 +80,6 @@ namespace Demo.Business.Managers
             });
         }
 
-        // [OperationReportOperationBehavior(true)]
         public Product[] GetActiveProducts()
         {
             return ExecuteFaultHandledOperation(() =>
@@ -100,7 +91,6 @@ namespace Demo.Business.Managers
             });
         }
 
-        // [OperationReportOperationBehavior(true)]
         public Product GetProductById(int id, bool acceptNullable = false)
         {
             return ExecuteFaultHandledOperation(() =>
@@ -123,19 +113,12 @@ namespace Demo.Business.Managers
             });
         }
 
-        /// <summary>
-        /// all commands should be transaction ready
-        /// </summary>
-        /// <param name="product"></param>
-        /// <returns></returns>
-        // [OperationReportOperationBehavior(true)]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         [OperationBehavior(TransactionScopeRequired = true)]
         public Product UpdateProduct(Product product)
         {
             return ExecuteFaultHandledOperation(() =>
             {
-                Product updatedEntity;
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 if (product.ProductId == 0)
                 {
@@ -143,16 +126,11 @@ namespace Demo.Business.Managers
                         this._businessFactory.GetBusinessEngine<IProductInventoryEngine>().GenerateArticleNumber();
                 }
 
-                updatedEntity = productRepository.UpdateProduct(product);
+                var updatedEntity = productRepository.UpdateProduct(product);
                 return updatedEntity;
             });
         }
 
-        /// <summary>
-        /// all commands should be transaction ready
-        /// </summary>
-        /// <param name="productId"></param>
-        // [OperationReportOperationBehavior(true)]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         [OperationBehavior(TransactionScopeRequired = true)]
         public void DeleteProduct(int productId)
@@ -173,11 +151,6 @@ namespace Demo.Business.Managers
             });
         }
 
-        /// <summary>
-        /// all commands should be transaction ready
-        /// </summary>
-        /// <param name="productId"></param>
-        // [OperationReportOperationBehavior(true)]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         [OperationBehavior(TransactionScopeRequired = true)]
         public void ActivateProduct(int productId)

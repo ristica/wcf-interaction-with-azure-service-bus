@@ -6,7 +6,6 @@ using Demo.Admin.Messages;
 using System.ComponentModel.Composition;
 using Demo.Client.Entities;
 using Core.Common.Core;
-using Core.Common.Contracts;
 
 namespace Demo.Admin.ViewModels
 {

@@ -11,29 +11,6 @@ namespace Demo.Client.Proxies.Service_Procies
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class InventoryClient : UserClientBase<IInventoryService>, IInventoryService
     {
-        /// <summary>
-        /// use this as importing c-tor when
-        /// no dynamically endpoint discovery used and for unit tests!
-        /// use [ImportingConstructor] if using hardcoded endpoint
-        /// </summary>
-        [ImportingConstructor]
-        public InventoryClient()
-        {
-
-        }
-
-        /// <summary>
-        /// if using dynamic endpoint discovery
-        /// use [ImportingConstructor] if using discovering the service
-        /// </summary>
-        /// <param name="endpointName"></param>
-        //[ImportingConstructor]
-        public InventoryClient([Import("Dynamic.Endpoint")] string endpointName) 
-            : base(endpointName)
-        {
-
-        }
-
         #region IInventoryService implementation
 
         public Product[] GetProducts()
