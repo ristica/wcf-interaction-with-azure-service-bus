@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Admin.Client", "Demo.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Admin.ViewModels", "Demo.Admin.ViewModels\Demo.Admin.ViewModels.csproj", "{1B829930-5585-4737-B932-849C4B10CD6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.SecurityProvider", "Demo.SecurityProvider\Demo.SecurityProvider.csproj", "{E2D0AB4B-4760-4468-A044-E25D9157E6A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{191D11E7-AF21-4AA8-ACD7-3D120303591F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +139,10 @@ Global
 		{1B829930-5585-4737-B932-849C4B10CD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B829930-5585-4737-B932-849C4B10CD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B829930-5585-4737-B932-849C4B10CD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D0AB4B-4760-4468-A044-E25D9157E6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D0AB4B-4760-4468-A044-E25D9157E6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D0AB4B-4760-4468-A044-E25D9157E6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D0AB4B-4760-4468-A044-E25D9157E6A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +167,6 @@ Global
 		{7DE2FAF6-43DF-48A5-B464-E8955AF0A4DF} = {87A71405-031A-4CE5-8CCC-CCAAAE9F806D}
 		{A69A833C-AC5B-4489-85CF-837BA41941F1} = {017C8DFE-6A3F-4713-9681-7FB05271E88A}
 		{1B829930-5585-4737-B932-849C4B10CD6E} = {017C8DFE-6A3F-4713-9681-7FB05271E88A}
+		{E2D0AB4B-4760-4468-A044-E25D9157E6A1} = {191D11E7-AF21-4AA8-ACD7-3D120303591F}
 	EndGlobalSection
 EndGlobal

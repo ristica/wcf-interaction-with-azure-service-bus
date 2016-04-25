@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Description;
 using Core.Common.Core;
+using Demo.Business.Contracts;
+using Demo.Client.Proxies.Service_Procies;
 using FluentValidation.Results;
 
 namespace Core.Common.UI.Core

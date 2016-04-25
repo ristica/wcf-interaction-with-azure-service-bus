@@ -52,6 +52,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -75,6 +76,10 @@
       <Project>{f1d533f9-31fc-4c34-86a7-416161fb86c4}</Project>
       <Name>Core.Common.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Common.ServiceModel\Core.Common.ServiceModel.csproj">
+      <Project>{6117034d-6062-4257-9020-533ed9790f86}</Project>
+      <Name>Core.Common.ServiceModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core.Common.UI\Core.Common.UI.csproj">
       <Project>{7de2faf6-43df-48a5-b464-e8955af0a4df}</Project>
       <Name>Core.Common.UI</Name>
@@ -83,6 +88,10 @@
       <Project>{8d236a26-8d80-44c5-ad20-97302af77ea0}</Project>
       <Name>Core.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Demo.Business.Contracts\Demo.Business.Contracts.csproj">
+      <Project>{4F5354B7-3BE3-4317-B2E0-B39105AB1BD7}</Project>
+      <Name>Demo.Business.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Demo.Client.Contracts\Demo.Client.Contracts.csproj">
       <Project>{8fc4e9da-8d51-4487-a2c7-15cfaa4b43f9}</Project>
       <Name>Demo.Client.Contracts</Name>
@@ -90,6 +99,14 @@
     <ProjectReference Include="..\Demo.Client.Entities\Demo.Client.Entities.csproj">
       <Project>{dec45000-ed7f-4077-b5cb-fd5c444f0df3}</Project>
       <Name>Demo.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Client.Proxies\Demo.Client.Proxies.csproj">
+      <Project>{E53FDC12-224F-4458-9662-6B082889C261}</Project>
+      <Name>Demo.Client.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.SecurityProvider\Demo.SecurityProvider.csproj">
+      <Project>{E2D0AB4B-4760-4468-A044-E25D9157E6A1}</Project>
+      <Name>Demo.SecurityProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

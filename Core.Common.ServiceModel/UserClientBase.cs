@@ -4,22 +4,12 @@ using System.Threading;
 
 namespace Core.Common.ServiceModel
 {
-    public abstract class UserClientBase<T> : ClientBase<T> where T : class
+    public class UserClientBase<T> : ClientBase<T> where T : class
     {
         /// <summary>
         /// accessing soap header to transport username for our wcf services
         /// </summary>
         public UserClientBase()
-        {
-            this.CheckSoapHeader();
-        }
-
-        /// <summary>
-        /// use this c-tor when dynamic endpoint discovery
-        /// </summary>
-        /// <param name="endpoint"></param>
-        public UserClientBase(string endpoint)
-            : base(endpoint)
         {
             this.CheckSoapHeader();
         }

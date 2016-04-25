@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,9 +72,25 @@
       <Project>{f1d533f9-31fc-4c34-86a7-416161fb86c4}</Project>
       <Name>Core.Common.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Common.ServiceModel\Core.Common.ServiceModel.csproj">
+      <Project>{6117034d-6062-4257-9020-533ed9790f86}</Project>
+      <Name>Core.Common.ServiceModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core.Common\Core.Common.csproj">
       <Project>{8d236a26-8d80-44c5-ad20-97302af77ea0}</Project>
       <Name>Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Business.Contracts\Demo.Business.Contracts.csproj">
+      <Project>{4F5354B7-3BE3-4317-B2E0-B39105AB1BD7}</Project>
+      <Name>Demo.Business.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Client.Contracts\Demo.Client.Contracts.csproj">
+      <Project>{8fc4e9da-8d51-4487-a2c7-15cfaa4b43f9}</Project>
+      <Name>Demo.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.Client.Proxies\Demo.Client.Proxies.csproj">
+      <Project>{E53FDC12-224F-4458-9662-6B082889C261}</Project>
+      <Name>Demo.Client.Proxies</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

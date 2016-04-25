@@ -54,6 +54,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Discovery" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +96,10 @@
     <ProjectReference Include="..\Demo.Business.Managers\Demo.Business.Managers.csproj">
       <Project>{0CEA14EE-AA7B-482E-963E-75B04911BA4D}</Project>
       <Name>Demo.Business.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.SecurityProvider\Demo.SecurityProvider.csproj">
+      <Project>{e2d0ab4b-4760-4468-a044-e25d9157e6a1}</Project>
+      <Name>Demo.SecurityProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

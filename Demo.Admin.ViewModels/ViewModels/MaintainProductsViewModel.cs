@@ -9,8 +9,8 @@ using Core.Common.Contracts;
 using Demo.Client.Entities;
 using Core.Common;
 using System.ServiceModel;
-using System.ServiceModel.Discovery;
-using System.Linq;
+using System.ServiceModel.Description;
+using Demo.Client.Proxies.Service_Procies;
 
 namespace Demo.Admin.ViewModels
 {
@@ -139,6 +139,8 @@ namespace Demo.Admin.ViewModels
         {
             WithClient(this._serviceFactory.CreateClient<IInventoryService>(), inventoryClient =>
             {
+                this.SetCredentials(inventoryClient);
+
                 var products = inventoryClient.GetProducts();
                 if (products != null && products.Length > 0)
                 {
@@ -148,6 +150,17 @@ namespace Demo.Admin.ViewModels
                     }
                 }
             });
+        }
+
+        private void SetCredentials(IInventoryService inventoryClient)
+        {
+            // Remove the ClientCredentials behavior. 
+            var credentials = (inventoryClient as InventoryClient).ChannelFactory.Endpoint.Behaviors.Remove<ClientCredentials>();
+            credentials.UserName.UserName = "pingo";
+            credentials.UserName.Password = "07061971";
+
+            // Add a custom client credentials instance to the behaviors collection. 
+            (inventoryClient as InventoryClient).ChannelFactory.Endpoint.Behaviors.Add(credentials);
         }
 
         #endregion
@@ -176,6 +189,8 @@ namespace Demo.Admin.ViewModels
             {
                 WithClient(this._serviceFactory.CreateClient<IInventoryService>(), inventoryClient =>
                 {
+                    this.SetCredentials(inventoryClient);
+
                     inventoryClient.DeleteProduct(product.ProductId);
                     product.IsActive = false;
                 });
@@ -196,6 +211,8 @@ namespace Demo.Admin.ViewModels
             {
                 WithClient(this._serviceFactory.CreateClient<IInventoryService>(), inventoryClient =>
                 {
+                    this.SetCredentials(inventoryClient);
+
                     inventoryClient.ActivateProduct(product.ProductId);
                     product.IsActive = true;
                 });
