@@ -1,6 +1,4 @@
-﻿using System.Security.Principal;
-using System.Threading;
-using Core.Common.Core;
+﻿using Core.Common.Core;
 using Demo.Business.Bootstrapper;
 using Demo.Business.Managers;
 
