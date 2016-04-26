@@ -36,7 +36,7 @@ namespace Demo.Business.Managers
                 // just for debug purposes!!!!
                 // stop and check the credentials
                 var ctx = ServiceSecurityContext.Current;
-                Debugger.Break();
+                //Debugger.Break();
 
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 var products = productRepository.GetProducts();
@@ -52,7 +52,7 @@ namespace Demo.Business.Managers
                 // just for debug purposes!!!!
                 // stop and check the credentials
                 var ctx = ServiceSecurityContext.Current;
-                Debugger.Break();
+                //Debugger.Break();
 
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 var product = productRepository.GetProductById(id);
@@ -78,6 +78,11 @@ namespace Demo.Business.Managers
         {
             return ExecuteFaultHandledOperation(() =>
             {
+                // just for debug purposes!!!!
+                // stop and check the credentials
+                var ctx = ServiceSecurityContext.Current;
+                //Debugger.Break();
+
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 if (product.ProductId == 0)
                 {
