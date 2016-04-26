@@ -6,6 +6,7 @@ namespace Demo.SecurityProvider
     {
         public override bool ValidateUser(string username, string password)
         {
+            // here is where we go tto the db and check credentials
             return username == "pingo" && password == "07061971";
         }
 
