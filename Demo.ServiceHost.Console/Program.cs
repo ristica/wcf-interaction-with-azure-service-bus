@@ -14,7 +14,11 @@ namespace Demo.ServiceHost.Console
             // shopping manager and dependencies of it (ShoppingManager)
             ObjectBase.Container = MefLoader.Init();
 
-            System.Console.WriteLine("Starting up services...");
+            System.Console.WriteLine("-------------------------------------------------");
+            System.Console.WriteLine("");
+            System.Console.WriteLine("     Starting up services");
+            System.Console.WriteLine("");
+            System.Console.WriteLine("-------------------------------------------------");
             System.Console.WriteLine("");
 
             // initalize the service manager           
@@ -22,12 +26,6 @@ namespace Demo.ServiceHost.Console
 
             // start the service manager
             StartService(hostInventoryManager, "InventoryManager");
-
-            System.Console.WriteLine("InventoryManager monitoring started.");
-
-            System.Console.WriteLine("");
-            System.Console.WriteLine("Start monitoring service calls");
-            System.Console.WriteLine("-------------------------------------------------------------------------");
             System.Console.WriteLine("");
             System.Console.ReadKey();
 
@@ -45,17 +43,19 @@ namespace Demo.ServiceHost.Console
         private static void StartService(System.ServiceModel.ServiceHost host, string service)
         {
             host.Open();
-            System.Console.WriteLine("Service => {0} started...", service);
+            System.Console.WriteLine("     => {0} started...", service);
 
             foreach (var endpoint in host.Description.Endpoints)
             {
-                System.Console.WriteLine("\t=> Listening on endpoint:");
-                System.Console.WriteLine("\t\tAddress : {0}", endpoint.Address.Uri);
-                System.Console.WriteLine("\t\tBinding : {0}", endpoint.Binding.Name);
-                System.Console.WriteLine("\t\tContract: {0}", endpoint.Contract.ConfigurationName);
+                System.Console.WriteLine("     => Listening on endpoint:");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("\t    Address : {0}", endpoint.Address.Uri);
+                System.Console.WriteLine("\t    Binding : {0}", endpoint.Binding.Name);
+                System.Console.WriteLine("\t    Contract: {0}", endpoint.Contract.ConfigurationName);
             }
 
-            System.Console.WriteLine();
+            System.Console.WriteLine("");
+            System.Console.WriteLine("-------------------------------------------------");
         }
 
         /// <summary>

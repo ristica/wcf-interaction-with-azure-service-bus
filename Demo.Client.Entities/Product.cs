@@ -103,7 +103,6 @@ namespace Demo.Client.Entities
         {
             public ProductValidator()
             {
-                //RuleFor(product => product.ArticleNumber).NotEmpty().Length(8);
                 RuleFor(product => product.Name).NotEmpty().Length(2, 20);
                 RuleFor(product => product.Description).NotEmpty().Length(2, 50);
                 RuleFor(product => product.Price).NotEmpty().GreaterThan(0);

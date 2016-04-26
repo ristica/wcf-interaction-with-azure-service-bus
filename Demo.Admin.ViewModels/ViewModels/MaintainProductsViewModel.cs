@@ -191,8 +191,8 @@ namespace Demo.Admin.ViewModels
                 {
                     this.SetCredentials(inventoryClient);
 
-                    inventoryClient.DeleteProduct(product.ProductId);
                     product.IsActive = false;
+                    inventoryClient.UpdateProduct(product);
                 });
             }
             catch (FaultException ex)
@@ -213,8 +213,8 @@ namespace Demo.Admin.ViewModels
                 {
                     this.SetCredentials(inventoryClient);
 
-                    inventoryClient.ActivateProduct(product.ProductId);
                     product.IsActive = true;
+                    inventoryClient.UpdateProduct(product);
                 });
             }
             catch (FaultException ex)
