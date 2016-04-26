@@ -7,6 +7,7 @@ using Demo.Business.Common;
 using Demo.Business.Contracts;
 using Demo.Business.Entities;
 using Demo.Data.Contracts;
+using System.Diagnostics;
 
 namespace Demo.Business.Managers
 {
@@ -33,7 +34,9 @@ namespace Demo.Business.Managers
             return ExecuteFaultHandledOperation(() =>
             {
                 // just for debug purposes!!!!
+                // stop and check the credentials
                 var ctx = ServiceSecurityContext.Current;
+                Debugger.Break();
 
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 var products = productRepository.GetProducts();
@@ -47,7 +50,9 @@ namespace Demo.Business.Managers
             return ExecuteFaultHandledOperation(() =>
             {
                 // just for debug purposes!!!!
+                // stop and check the credentials
                 var ctx = ServiceSecurityContext.Current;
+                Debugger.Break();
 
                 var productRepository = this._repositoryFactory.GetDataRepository<IProductRepository>();
                 var product = productRepository.GetProductById(id);
