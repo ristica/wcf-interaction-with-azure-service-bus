@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Demo.Admin.Client.Properties
+namespace Demo.Admin.Client.Desktop.Properties
 {
 
 

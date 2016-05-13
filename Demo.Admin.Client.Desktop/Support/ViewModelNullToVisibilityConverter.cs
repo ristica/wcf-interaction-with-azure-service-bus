@@ -1,15 +1,14 @@
-﻿using System;
+using System;
+using System.Windows;
 using System.Windows.Data;
 
-namespace Demo.Admin.Client.Support
+namespace Demo.Admin.Client.Desktop.Support
 {
-    public class ProductStatusConverter : IValueConverter
+    public class ViewModelNullToVisibilityConverter : IValueConverter
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            bool currentlyRented = (bool)value;
-
-            return (currentlyRented ? "Currently Rented" : "Available");
+            return (value == null ? Visibility.Collapsed : Visibility.Visible);
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows;
 
-namespace Demo.Admin.Client.Support
+namespace Demo.Admin.Client.Desktop.Support
 {
-    public class DateTime2VizConverterApprovedReverse : System.Windows.Data.IMultiValueConverter
+    public class DateTime2VizConverterApproved : System.Windows.Data.IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -18,16 +18,14 @@ namespace Demo.Admin.Client.Support
             {
                 if (values[1] != null)  // approved
                 {
-                    returnValue = Visibility.Visible;
+                    returnValue = Visibility.Collapsed;
                 }
                 else
                 {
-                    returnValue = Visibility.Collapsed;
-                }
-
-                if (values[2] != null)  // shipped
-                {
-                    returnValue = Visibility.Collapsed;
+                    if (values[2] != null)  // shipped
+                    {
+                        returnValue = Visibility.Collapsed;
+                    }
                 }
             }
 

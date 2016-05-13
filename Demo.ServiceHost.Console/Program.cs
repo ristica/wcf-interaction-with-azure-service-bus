@@ -63,7 +63,6 @@ namespace Demo.ServiceHost.Console
         /// <param name="serviceDescription"></param>
         private static void StopService(System.ServiceModel.ServiceHost host, string serviceDescription)
         {
-            // do not abort!!!
             host.Close();
             System.Console.WriteLine("Service {0} stopped.", serviceDescription);
         }

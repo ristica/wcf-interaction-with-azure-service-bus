@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows;
 
-namespace Demo.Admin.Client.Support
+namespace Demo.Admin.Client.Desktop.Support
 {
     public class Bool2VizConverter2Reverse : System.Windows.Data.IValueConverter
     {

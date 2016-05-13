@@ -2,7 +2,7 @@
 using Demo.Admin.ViewModels;
 using MahApps.Metro.Controls;
 
-namespace Demo.Admin.Client
+namespace Demo.Admin.Client.Desktop
 {
     public partial class MainWindow : MetroWindow
     {

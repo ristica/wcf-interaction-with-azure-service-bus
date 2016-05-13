@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace Demo.Admin.Client.Support
+namespace Demo.Admin.Client.Desktop.Support
 {
     public class ModalDialogManager : Control
     {
@@ -28,10 +28,10 @@ namespace Demo.Admin.Client.Support
         #region DependencyProperties for Commands
 
         public static readonly DependencyProperty CloseCommandProperty =
-            DependencyProperty.Register("CloseCommand", typeof(ICommand), typeof(ModalDialogManager), new UIPropertyMetadata(null));
+            DependencyProperty.Register("CloseCommand", typeof(ICommand), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager), new UIPropertyMetadata(null));
 
         public static readonly DependencyProperty IsOpenProperty =
-            DependencyProperty.Register("IsOpen", typeof(bool), typeof(ModalDialogManager), new UIPropertyMetadata(false, IsOpenChanged));
+            DependencyProperty.Register("IsOpen", typeof(bool), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager), new UIPropertyMetadata(false, IsOpenChanged));
 
         #endregion
 
@@ -43,7 +43,7 @@ namespace Demo.Admin.Client.Support
             set { SetValue(DialogHeightProperty, value); }
         }
         public static readonly DependencyProperty DialogHeightProperty =
-            DependencyProperty.Register("DialogHeight", typeof(double), typeof(ModalDialogManager));
+            DependencyProperty.Register("DialogHeight", typeof(double), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager));
 
         public double DialogWidth
         {
@@ -51,7 +51,7 @@ namespace Demo.Admin.Client.Support
             set { SetValue(DialogWidthProperty, value); }
         }
         public static readonly DependencyProperty DialogWidthProperty =
-            DependencyProperty.Register("DialogWidth", typeof(double), typeof(ModalDialogManager));
+            DependencyProperty.Register("DialogWidth", typeof(double), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager));
 
         public ResizeMode DialogResizeMode
         {
@@ -59,7 +59,7 @@ namespace Demo.Admin.Client.Support
             set { SetValue(DialogResizeModeProperty, value); }
         }
         public static readonly DependencyProperty DialogResizeModeProperty =
-            DependencyProperty.Register("DialogResizeMode", typeof(ResizeMode), typeof(ModalDialogManager));
+            DependencyProperty.Register("DialogResizeMode", typeof(ResizeMode), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager));
 
         public ImageSource Icon
         {
@@ -67,7 +67,7 @@ namespace Demo.Admin.Client.Support
             set { SetValue(IconProperty, value); }
         }
         public static readonly DependencyProperty IconProperty =
-            DependencyProperty.Register("Icon", typeof(ImageSource), typeof(ModalDialogManager), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Icon", typeof(ImageSource), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager), new UIPropertyMetadata(null));
 
         public string Title
         {
@@ -75,7 +75,7 @@ namespace Demo.Admin.Client.Support
             set { SetValue(TitleProperty, value); }
         }
         public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register("Title", typeof(string), typeof(ModalDialogManager), new UIPropertyMetadata(null));
+            DependencyProperty.Register("Title", typeof(string), typeof(Demo.Admin.Client.Desktop.Support.ModalDialogManager), new UIPropertyMetadata(null));
 
         #endregion
 
@@ -102,7 +102,7 @@ namespace Demo.Admin.Client.Support
 
         public static void IsOpenChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var m = d as ModalDialogManager;
+            var m = d as Demo.Admin.Client.Desktop.Support.ModalDialogManager;
             var newVal = (bool)e.NewValue;
             if (newVal)
             {

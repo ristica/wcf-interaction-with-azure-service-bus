@@ -6,11 +6,8 @@ using System.ComponentModel.Composition.Primitives;
 using System.Reflection;
 using System.Windows;
 
-namespace Demo.Admin.Client
+namespace Demo.Admin.Client.Desktop
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)
